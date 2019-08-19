@@ -85,6 +85,8 @@ Given all the data present in .csv format here are some of the columns and the t
 **\*Make a facet and perform the cluster operation** using the \*key-collision\* method and \*fingerprint\* function. Merge the relevant clusters.
 
 ![Logo](/Img/3.png)
+
+![Logo](/Img/4.png)
  
 ** Transformations over Season1Date:**
 
@@ -94,14 +96,13 @@ Given all the data present in .csv format here are some of the columns and the t
 
 \ ***Split the column** values using \* to \* as separator, I  got 2 columns as a result.
 
-![Logo](/Img/4.png)
- 
+ ![Logo](/Img/5.png)
 
 **Rename** the first column as \*Season1DateStart\* and second column as \*Season1DateEnd\*.
 
 \ ***Convert the values in the column to ISO**&#39;d/M/y&#39; format using value.toDate(&#39;d/M/y&#39;).
 
-![Logo](/Img/5.png)
+![Logo](/Img/6.png)
  
   **Repeat** 1, 2 and 3 for \*Season2Date\*, \*Season3Date\* and \*Season4Date\*.
 
@@ -123,32 +124,33 @@ Given all the data present in .csv format here are some of the columns and the t
 
 ER diagram given below represents the data structure after cleaning with OpenRefine and importing the data into SQLlite database. In order my database schema to satisfy the fourth normal form a lot of manipulations for removing the data redundancy and improving the data reusability were done. Having the schema below it allows adaptability, expandability and high performance once the data becomes part of a real system which interacts with it. The main idea behind the division is to use the concept of dimensions and facts.
 
-![Logo](/Img/6.png)
+![Logo](/Img/7.jpg)
  
 **Integrity Constraints Check**
 
 **latitude and longitude should be in the interval [0,90], [-180,180]**
-![Logo](/Img/7.png)
- 
-**There are no inactive markets. There should be at least one datetime per market in seasondates. And the datefrom and dateto values should not be empty**
 
 ![Logo](/Img/8.png)
  
-**Select all the markets that have seafood and vegetables and are opened in November**
+**There are no inactive markets. There should be at least one datetime per market in seasondates. And the datefrom and dateto values should not be empty**
 
 ![Logo](/Img/9.png)
+ 
+**Select all the markets that have seafood and vegetables and are opened in November**
+
+![Logo](/Img/10.png)
 
 **All the markets should have non-empty city, state and county  **
 
-![Logo](/Img/10.png)
+![Logo](/Img/11.jpg)
  
 **No empty names for cities, states, counties**
 
-![Logo](/Img/11.jpg)
- 
-**There should not be two markets that are in the same location during the same time**
-
 ![Logo](/Img/12.jpg)
+
+ **There should not be two markets that are in the same location during the same time**
+
+![Logo](/Img/13.png)
  
 All of the scripts related to the SQL part of the project were included in sqllite-commands.txt under &quot;3. SQL&quot; directory. The scripts were run in a terminal to create schema, import the data from csv and export it to SQL based insert queries. &quot;farmersmarket\_schema.sql&quot; is the file containing the plain schema implementing the relations between the tables including foreign and primary keys and other constraints like field types.
 
@@ -156,7 +158,7 @@ All of the scripts related to the SQL part of the project were included in sqlli
 
 I used the YesWorkflow on-line editor to create the workflow graph for whole process. Firstly, the data root is the farmersmarkets.csv which got split into multiple files and cleaning using OpenRefine was performed over each of these files. After the cleaning the diagram represents how each of the files got imported into corresponding SQL table and constraints check was executed over all the tables to verify whether the data has the needed quality to satisfy the use cases mentioned in the Initial Assessment document.
 
-![Logo](/Img/13.png)
+![Logo](/Img/14.png)
  
 1. **Challenges**
 
@@ -174,5 +176,4 @@ Tools like OpenRefine have their limitations in terms of how much data can they 
 
 Data Visualization is one of the most effective techniques for gaining insights from  data.
 
-![Logo](/Img/14.png)
- 
+ ![Logo](/Img/15.png)
