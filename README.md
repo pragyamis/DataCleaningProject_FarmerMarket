@@ -6,7 +6,7 @@
 
 **(**CS-513 Theory and Practice of Data Cleaning)
 
-![alt text](https://github.com/pragyamis/DataCleaningProject_FarmerMarket/edit/master/Img/1.jpg "Logo")
+![Logo](/Img/1.jpg)
  
 1. **Introduction and Overview**
 
